@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid justify-content-between">
+        <div class="d-flex">
+
+            <h3 class="heads">Welcome to <b style="font-weight: 900;">Swiftasol</b> </h3>
+
+        </div>
+
+        <ul class="navbar">
+
+           <button class="btn btn-success" routerLink="/add-employee">Add Employee</button>
+            <a class="link-primary" href="javascript:void(0);"><i class='bx bx-power-off'
+                    style="font-size: 25px; font-weight: 900; margin-left: 40px;"></i></a>
+        </ul>
+
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <h1 style="text-align: center;">Data Table</h1>
+
+    <table class="table">
+
+        <!-- Header of table -->
+
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Province</th>
+                <th>Country</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <!-- Data of table -->
+
+        <tbody>
+            <tr *ngFor="let item of employeeData">
+                <td>{{ item.id }} </td>
+                <td>{{ item.first }} </td>
+                <td>{{ item.last }} </td>
+                <td>{{ item.email }} </td>
+                <td>{{ item.address }}</td>
+                <td>{{ item.city }}</td>
+                <td>{{ item.province }}</td>
+                <td>{{ item.country }} </td>
+                <td>
+                    <button class="btn btn-success btn-sm" (click)="editEmployee(item.id)">Edit</button> &nbsp;
+                    <button class="btn btn-danger btn-sm" (click)="deleteEmployee(item.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
